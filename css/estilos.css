@@ -32,12 +32,7 @@ body{
   text-align: right;
   margin-top: 39px;
 }
-div .tecla:active{
-  width: 21%;
-  height: 60.91px;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
-}
+
 .teclado{
   display: flex;
   flex-flow: row wrap;
