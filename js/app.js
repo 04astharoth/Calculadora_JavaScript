@@ -11,7 +11,9 @@ var Calculadora = {
   ocho: document.getElementById('8'),
   nueve: document.getElementById('9'),
   cero: document.getElementById('0'),
-
+  punto: document.getElementById('punto'),
+  sign: document.getElementById('sign'),
+  on: document.getElementById('on'),
 
   //Funciones
   imprimirDigito: function (numero) {
@@ -24,8 +26,11 @@ var Calculadora = {
     }
   },
 
-
   init: function () {
+    this.on.addEventListener("click", function () {
+      Calculadora.display.innerHTML = "0"
+    });
+
     this.uno.addEventListener("click", function () {
       Calculadora.imprimirDigito("1")
     });
@@ -61,7 +66,22 @@ var Calculadora = {
     this.nueve.addEventListener("click", function () {
       Calculadora.imprimirDigito("9")
     });
-    
+
+    this.cero.addEventListener("click", function () {
+      Calculadora.imprimirDigito("0")
+    });
+
+    this.punto.addEventListener("click", function () {
+      // validamos que en el display no exista el punto, sino deja concatenar el punto
+      if (Calculadora.display.innerHTML.indexOf('.') == -1) {
+        Calculadora.imprimirDigito(".")
+      }
+    });
+
+    this.sign.addEventListener("click", function () {
+      Calculadora.display.innerHTML = -1 * parseFloat(Calculadora.display.innerHTML)
+    });
+
     // animacion en las teclas
     for (var i = 0; i < this.tecla.length; i++) {
       this.tecla[i].addEventListener('mousedown', function () {
