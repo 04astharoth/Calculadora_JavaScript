@@ -74,7 +74,7 @@ var Calculadora = {
     this.punto.addEventListener("click", function () {
       // validamos que en el display no exista el punto, sino deja concatenar el punto
       if (Calculadora.display.innerHTML.indexOf('.') == -1) {
-        Calculadora.imprimirDigito(".")
+        Calculadora.display.innerHTML += '.'
       }
     });
 
