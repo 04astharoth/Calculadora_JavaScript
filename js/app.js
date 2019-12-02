@@ -15,8 +15,16 @@ var Calculadora = {
   sign: document.getElementById('sign'),
   on: document.getElementById('on'),
 
+  //botones de operaciones aritmeticas
+  raiz: document.getElementById('raiz'),
+  dividido: document.getElementById('dividido'),
+  por: document.getElementById('por'),
+  menos: document.getElementById('menos'),
+  mas: document.getElementById('mas'),
+
+
   //Funciones
-  imprimirDigito: function (numero) {
+  imprimirDigito: function (numero) { // valida la long. de display, esta no sera mayor a 8 digitos
     if (this.display.innerHTML.length < 8) {
       if (this.display.innerHTML == "0") {
         this.display.innerHTML = numero
