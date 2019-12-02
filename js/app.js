@@ -1,4 +1,9 @@
 var Calculadora = {
+  //variables globales
+  operando1: 0,
+  operando2: 0,
+  operacion: "",
+  // obteniendo los botones
   tecla: document.querySelectorAll('.tecla'),
   display: document.getElementById('display'),
   uno: document.getElementById('1'),
@@ -17,10 +22,11 @@ var Calculadora = {
 
   //botones de operaciones aritmeticas
   raiz: document.getElementById('raiz'),
-  dividido: document.getElementById('dividido'),
-  por: document.getElementById('por'),
-  menos: document.getElementById('menos'),
-  mas: document.getElementById('mas'),
+  division: document.getElementById('dividido'),
+  multiplicacion: document.getElementById('por'),
+  resta: document.getElementById('menos'),
+  suma: document.getElementById('mas'),
+  resultado: document.getElementById('igual'),
 
 
   //Funciones
@@ -35,6 +41,43 @@ var Calculadora = {
   },
 
   init: function () {
+    this.raiz.addEventListener("click", function () {
+      Calculadora.operando1 = parseFloat(Calculadora.display.innerHTML)
+      var resultado = Math.sqrt(num).toPrecision(7)
+      Calculadora.display.innerHTML = resultado
+    })
+
+    this.suma.addEventListener("click", function () {
+      Calculadora.operando1 = parseFloat(Calculadora.display.innerHTML)
+      Calculadora.operacion = "+"
+      Calculadora.display.innerHTML = ""
+    })
+
+    this.resta.addEventListener("click", function () {
+      Calculadora.operacion = "-"
+    })
+
+    this.multiplicacion.addEventListener("click", function () {
+      Calculadora.operacion = "*"
+    })
+
+    this.division.addEventListener("click", function () {
+      Calculadora.operacion = "/"
+    })
+
+    this.resultado.addEventListener("click", function () {
+      switch (Calculadora.operacion) {
+        case "+":
+          Calculadora.operando2 = parseFloat(Calculadora.display.innerHTML)
+          var resultado = Calculadora.operando1 + Calculadora.operando2
+          Calculadora.display.innerHTML = resultado
+          break;
+
+        default:
+          break;
+      }
+    })
+
     this.on.addEventListener("click", function () {
       Calculadora.display.innerHTML = "0"
     });
