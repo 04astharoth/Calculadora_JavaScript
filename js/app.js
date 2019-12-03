@@ -43,7 +43,7 @@ var Calculadora = {
   init: function () {
     this.raiz.addEventListener("click", function () {
       Calculadora.operando1 = parseFloat(Calculadora.display.innerHTML)
-      var resultado = Math.sqrt(num).toPrecision(7)
+      var resultado = Math.sqrt(Calculadora.operando1).toPrecision(7)
       Calculadora.display.innerHTML = resultado
     })
 
