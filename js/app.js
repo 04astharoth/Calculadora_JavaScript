@@ -75,6 +75,8 @@ var Calculadora = {
     this.on.addEventListener("click", function () {
       Calculadora.display.innerHTML = 0
       Calculadora.operando2 = 0
+      Calculadora.operando1 = 0
+      Calculadora.operacion = ""
     });
     this.sign.addEventListener("click", function () {
       Calculadora.display.innerHTML *= -1
