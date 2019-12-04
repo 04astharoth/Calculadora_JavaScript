@@ -156,7 +156,21 @@ var Calculadora = {
         this.display.innerHTML = this.display.innerHTML.substring(0, 7)
         this.operando1 = this.display.innerHTML
         break;
-
+      case "-":
+        this.display.innerHTML = parseFloat(this.operando1) - parseFloat(this.operando2)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.operando1 = this.display.innerHTML
+        break;
+      case "*":
+        this.display.innerHTML = parseFloat(this.operando1) * parseFloat(this.operando2)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.operando1 = this.display.innerHTML
+        break;
+      case "/":
+        this.display.innerHTML = parseFloat(this.operando1) / parseFloat(this.operando2)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.operando1 = this.display.innerHTML
+        break;
       default:
         break;
     }
