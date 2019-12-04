@@ -155,25 +155,26 @@ var Calculadora = {
     switch (this.operacion) {
       case "+":
         this.display.innerHTML = parseFloat(this.operando1) + parseFloat(this.operando2)
-        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 8)
         this.operando1 = this.display.innerHTML
         break;
       case "-":
         this.display.innerHTML = parseFloat(this.operando1) - parseFloat(this.operando2)
-        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 8)
         this.operando1 = this.display.innerHTML
         break;
       case "*":
         this.display.innerHTML = parseFloat(this.operando1) * parseFloat(this.operando2)
-        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 8)
         this.operando1 = this.display.innerHTML
         break;
       case "/":
         this.display.innerHTML = parseFloat(this.operando1) / parseFloat(this.operando2)
-        this.display.innerHTML = this.display.innerHTML.substring(0, 7)
+        this.display.innerHTML = this.display.innerHTML.substring(0, 8)
         this.operando1 = this.display.innerHTML
         break;
       default:
+        this.Raiz()
         break;
     }
   }
